@@ -5,22 +5,20 @@
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
-  provider = "prisma-client"
-  output   = "../generated/prisma"
+  provider        = "prisma-client-js"
 }
 
 datasource db {
-  provider = "postgresql"
+  provider   = "postgresql"
 }
 
+model LawSection {
+  id            String                 @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  lawName       String
+  articleNumber String
+  content       String
+  source        String
+  embedding     Float[]
 
-CREATE EXTENSION IF NOT EXISTS vector;
-CREATE EXTENSION IF NOT EXISTS pgcrypto;
-
-CREATE TABLE "LawSection" (
-  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  "lawName" TEXT NOT NULL,
-  "articleNumber" TEXT NOT NULL,
-  content TEXT NOT NULL,
-  embedding VECTOR(1536)
-);
+  @@map("LawSection")
+}
