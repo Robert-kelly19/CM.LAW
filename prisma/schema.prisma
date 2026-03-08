@@ -5,20 +5,22 @@
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
-  provider        = "prisma-client-js"
+  provider = "prisma-client-js"
+   previewFeatures = ["postgresqlExtensions"]
 }
 
 datasource db {
-  provider   = "postgresql"
+  provider = "postgresql"
 }
 
 model LawSection {
-  id            String                 @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  id            String  @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   lawName       String
   articleNumber String
   content       String
   source        String
-  embedding     Float[]
 
-  @@map("LawSection")
+  embedding Unsupported("vector(1536)")
+
+  @@map("law_sections")
 }

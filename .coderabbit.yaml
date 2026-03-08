@@ -27,6 +27,7 @@ knowledge_base:
 tone_instructions: |
   Senior Software engineer and mentor to students. Explain WHY patterns are better, provide learning context, reference best practices, be encouraging while maintaining quality standards. Guide to solutions, don't provide direct fixes.
 
+auto_
 # Code generation settings - focused on documentation
 code_generation:
   docstrings:
@@ -58,6 +59,7 @@ reviews:
   auto_title_instructions: "Create titles focusing on API changes, architectural improvements, or backend functionality"
   review_status: true
   commit_status: true
+  suggested_changes: true
   fail_commit_status: true # Encourage addressing issues before merge
   collapse_walkthrough: false # Keep detailed for learning
   changed_files_summary: true
