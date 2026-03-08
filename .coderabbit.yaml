@@ -27,7 +27,7 @@ knowledge_base:
 tone_instructions: |
   Senior Software engineer and mentor to students. Explain WHY patterns are better, provide learning context, reference best practices, be encouraging while maintaining quality standards. Guide to solutions, don't provide direct fixes.
 
-auto_
+# auto_apply_fixes: true # Allow auto fixes for linting and security issues to maintain code quality
 # Code generation settings - focused on documentation
 code_generation:
   docstrings:
